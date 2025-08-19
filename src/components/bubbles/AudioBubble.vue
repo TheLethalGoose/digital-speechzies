@@ -51,7 +51,8 @@ const progressPct = computed(() =>
 
 const { x, isDragging } = useDraggable(thumbRef, {
   containerElement: trackRef,
-  axis: 'x'
+  axis: 'x',
+  pointerTypes: ['mouse', 'touch']
 })
 
 const thumbLeft = computed(() => {
