@@ -1,0 +1,19 @@
+{
+  "thesis": [
+    { "type": "text", "from": "me", "text": "Das Hörbuch zur Thesis" },
+    { "type": "audio", "from": "me", "src": "lofi-piano-loop.wav" }
+  ],
+  "sammlung": [
+    { "type": "text", "from": "me", "text": "Eine Sammlung von Sprachnachrichten" },
+    { "type": "audio", "from": "other", "src": "lofi-piano-loop.wav" }
+  ],
+  "interview": [
+    { "type": "text", "from": "me", "text": "Frage 1" },
+    { "type": "text", "from": "me", "text": "Frage 2" },
+    { "type": "text", "from": "me", "text": "Frage 3" },
+    { "type": "text", "from": "other", "text": "Hallo hier Anna" },
+    { "type": "audio", "from": "other", "src": "lofi-piano-loop.wav" },
+    { "type": "text", "from": "other", "text": "Alex" },
+    { "type": "audio", "from": "other", "src": "lofi-piano-loop.wav" }
+  ]
+}
