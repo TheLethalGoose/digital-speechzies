@@ -165,6 +165,22 @@ onMounted(() => {
   border-radius: 50%;
   background: #383838;
   cursor: grab;
+  touch-action: none;
+}
+
+.thumb::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 50%;
+}
+
+.track,
+.thumb {
+  touch-action: pan-y;
 }
 
 .time {
