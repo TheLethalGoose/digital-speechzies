@@ -29,7 +29,7 @@
   color: red;
   text-decoration: none;
   margin-left: 0.3rem;
-  font-size: 2rem;
+  font-size: 1.2rem;
   font-weight: bold;
 }
 </style>

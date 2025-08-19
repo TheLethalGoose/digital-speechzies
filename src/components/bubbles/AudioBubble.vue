@@ -4,8 +4,8 @@
       <div class="bubble audio" :class="props.from">
         <div class="audio-controls">
           <button class="play-btn" @click="togglePlay">
-            <span v-if="!isPlaying">▶</span>
-            <span v-else>❚❚</span>
+            <span v-if="!isPlaying">⏵︎</span>
+            <span v-else>⏸︎</span>
           </button>
 
           <div class="track" ref="trackRef">
@@ -121,7 +121,7 @@ onMounted(() => {
   border: 0;
   background: #383838;
   color: #fff;
-  font-size: 14px;
+  font-size: 22px;
   display: flex;
   align-items: center;
   justify-content: center;
