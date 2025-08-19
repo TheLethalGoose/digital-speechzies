@@ -10,7 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/howler": "^2.2.12",
     "@vueuse/core": "^13.7.0",
+    "howler": "^2.2.4",
     "vue": "^3.5.18",
     "vue-router": "^4.5.1"
   },

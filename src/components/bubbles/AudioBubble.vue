@@ -4,14 +4,18 @@
       <div class="bubble audio" :class="props.from">
         <div class="audio-controls">
           <button class="play-btn" @click="togglePlay">
-            <span v-if="!isPlaying">▶</span>
-            <span v-else>❚❚</span>
+            <span v-if="!isPlaying">⏵︎</span>
+            <span v-else>⏸︎</span>
           </button>
 
           <div class="track" ref="trackRef">
             <div class="track-bg"></div>
             <div class="track-fill" :style="{ width: progressPct + '%' }"></div>
-            <div class="thumb" ref="thumbRef" :style="{ left: thumbLeft + '%' }"></div>
+            <div
+              class="thumb"
+              ref="thumbRef"
+              :style="{ left: thumbLeft + '%' }"
+            ></div>
           </div>
         </div>
 
@@ -19,31 +23,30 @@
           <span class="current">{{ formattedCurrent }}</span>
           <span class="total">{{ formattedDuration }}</span>
         </div>
-        <audio ref="audioRef" :src="srcUrl" preload="metadata"></audio>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, watch } from 'vue'
+import { ref, computed, onMounted, onBeforeUnmount, watch } from 'vue'
 import { useDraggable } from '@vueuse/core'
+import { Howl } from 'howler'
 
 interface Props {
   src: string
   from?: 'me' | 'other'
 }
 const props = withDefaults(defineProps<Props>(), { from: 'me' })
-const basePath = import.meta.env.BASE_URL
-const srcUrl = computed(() => `${basePath}audio/${props.src}`)
-
-const audioRef = ref<HTMLAudioElement | null>(null)
-const trackRef = ref<HTMLDivElement | null>(null)
-const thumbRef = ref<HTMLDivElement | null>(null)
 
 const isPlaying = ref(false)
 const duration = ref(0)
 const current = ref(0)
+
+const trackRef = ref<HTMLDivElement | null>(null)
+const thumbRef = ref<HTMLDivElement | null>(null)
+let howl: Howl | null = null
+let rafId: number | null = null
 
 const progressPct = computed(() =>
   duration.value ? (current.value / duration.value) * 100 : 0
@@ -51,7 +54,8 @@ const progressPct = computed(() =>
 
 const { x, isDragging } = useDraggable(thumbRef, {
   containerElement: trackRef,
-  axis: 'x'
+  axis: 'x',
+  pointerTypes: ['mouse', 'touch']
 })
 
 const thumbLeft = computed(() => {
@@ -64,7 +68,7 @@ const thumbLeft = computed(() => {
 })
 
 watch(isDragging, dragging => {
-  if (!dragging && trackRef.value && duration.value) {
+  if (!dragging && trackRef.value && duration.value && howl) {
     const rect = trackRef.value.getBoundingClientRect()
     const frac = x.value / rect.width
     seekToFraction(Math.min(1, Math.max(0, frac)))
@@ -72,14 +76,19 @@ watch(isDragging, dragging => {
 })
 
 function togglePlay() {
-  const a = audioRef.value
-  if (!a) return
-  a.paused ? a.play() : a.pause()
+  if (!howl) return
+  if (howl.playing()) {
+    howl.pause()
+  } else {
+    howl.play()
+  }
 }
+
 function seekToFraction(frac: number) {
-  const a = audioRef.value
-  if (!a || !duration.value) return
-  a.currentTime = frac * duration.value
+  if (!howl || !duration.value) return
+  const t = duration.value * frac
+  howl.seek(t)
+  current.value = t
 }
 
 function formatTime(sec: number) {
@@ -91,19 +100,42 @@ function formatTime(sec: number) {
 const formattedCurrent = computed(() => formatTime(current.value))
 const formattedDuration = computed(() => formatTime(duration.value))
 
+function step() {
+  if (howl && howl.playing() && !isDragging.value) {
+    current.value = howl.seek() as number
+  }
+  rafId = requestAnimationFrame(step)
+}
+
 onMounted(() => {
-  const a = audioRef.value
-  if (!a) return
-  a.addEventListener('loadedmetadata', () => (duration.value = a.duration || 0))
-  a.addEventListener('timeupdate', () => {
-    if (!isDragging.value) current.value = a.currentTime || 0
+  howl = new Howl({
+    src: [import.meta.env.BASE_URL + 'audio/' + props.src],
+    html5: true,
+    preload: true,
+    onload: () => {
+      duration.value = howl?.duration() ?? 0
+    },
+    onplay: () => {
+      isPlaying.value = true
+      step()
+    },
+    onpause: () => {
+      isPlaying.value = false
+    },
+    onstop: () => {
+      isPlaying.value = false
+      current.value = 0
+    },
+    onend: () => {
+      isPlaying.value = false
+      current.value = duration.value
+    }
   })
-  a.addEventListener('play', () => (isPlaying.value = true))
-  a.addEventListener('pause', () => (isPlaying.value = false))
-  a.addEventListener('ended', () => {
-    isPlaying.value = false
-    current.value = duration.value
-  })
+})
+
+onBeforeUnmount(() => {
+  if (rafId) cancelAnimationFrame(rafId)
+  howl?.unload()
 })
 </script>
 
@@ -121,7 +153,7 @@ onMounted(() => {
   border: 0;
   background: #383838;
   color: #fff;
-  font-size: 14px;
+  font-size: 22px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -164,6 +196,22 @@ onMounted(() => {
   border-radius: 50%;
   background: #383838;
   cursor: grab;
+  touch-action: none;
+}
+
+.thumb::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 50%;
+}
+
+.track,
+.thumb {
+  touch-action: pan-y;
 }
 
 .time {

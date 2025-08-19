@@ -1,19 +1,430 @@
 {
-  "thesis": [
-    { "type": "text", "from": "me", "text": "Das Hörbuch zur Thesis" },
-    { "type": "audio", "from": "me", "src": "lofi-piano-loop.wav" }
-  ],
-  "sammlung": [
-    { "type": "text", "from": "me", "text": "Eine Sammlung von Sprachnachrichten" },
-    { "type": "audio", "from": "other", "src": "lofi-piano-loop.wav" }
+  "hoerbuch": [
+    {
+      "type": "text",
+      "from": "me",
+      "text": "Das Hörbuch zur Thesis"
+    },
+    {
+      "type": "text",
+      "from": "other",
+      "text": "Einleitung"
+    },
+    {
+      "type": "audio",
+      "from": "other",
+      "src": "hoerbuch/Hoerbuch_01_Einleitung.webm"
+    },
+    {
+      "type": "text",
+      "from": "me",
+      "text": "Vorwort"
+    },
+    {
+      "type": "audio",
+      "from": "me",
+      "src": "hoerbuch/Hoerbuch_02_Vorwort.webm"
+    },
+    {
+      "type": "text",
+      "from": "other",
+      "text": "Was ist Kommunikation?"
+    },
+    {
+      "type": "audio",
+      "from": "other",
+      "src": "hoerbuch/Hoerbuch_03_Was_ist_Kommunikation.webm"
+    },
+    {
+      "type": "text",
+      "from": "me",
+      "text": "Kommunikation gleich Interaktion?"
+    },
+    {
+      "type": "audio",
+      "from": "me",
+      "src": "hoerbuch/Hoerbuch_04_Kommunikation_gleich_Interaktion.webm"
+    },
+    {
+      "type": "text",
+      "from": "other",
+      "text": "Der Brief"
+    },
+    {
+      "type": "audio",
+      "from": "other",
+      "src": "hoerbuch/Hoerbuch_05_Der_Brief.webm"
+    },
+    {
+      "type": "text",
+      "from": "me",
+      "text": "Die Telegrafie"
+    },
+    {
+      "type": "audio",
+      "from": "me",
+      "src": "hoerbuch/Hoerbuch_06_Die_Telegrafie.webm"
+    },
+    {
+      "type": "text",
+      "from": "other",
+      "text": "Die Telekommunikation"
+    },
+    {
+      "type": "audio",
+      "from": "other",
+      "src": "hoerbuch/Hoerbuch_07_Die_Telekommunikation.webm"
+    },
+    {
+      "type": "text",
+      "from": "me",
+      "text": "Das Internet"
+    },
+    {
+      "type": "audio",
+      "from": "me",
+      "src": "hoerbuch/Hoerbuch_08_Das_Internet.webm"
+    },
+    {
+      "type": "text",
+      "from": "other",
+      "text": "Die E-Mail"
+    },
+    {
+      "type": "audio",
+      "from": "other",
+      "src": "hoerbuch/Hoerbuch_09_Die_E-Mail.webm"
+    },
+    {
+      "type": "text",
+      "from": "me",
+      "text": "Zwischenfazit"
+    },
+    {
+      "type": "audio",
+      "from": "me",
+      "src": "hoerbuch/Hoerbuch_10_Zwischenfazit.webm"
+    },
+    {
+      "type": "text",
+      "from": "other",
+      "text": "WhatsApp"
+    },
+    {
+      "type": "audio",
+      "from": "other",
+      "src": "hoerbuch/Hoerbuch_11_WhatsApp.webm"
+    },
+    {
+      "type": "text",
+      "from": "me",
+      "text": "Die Sprachnachricht"
+    },
+    {
+      "type": "audio",
+      "from": "me",
+      "src": "hoerbuch/Hoerbuch_12_Die_Sprachnachricht.webm"
+    },
+    {
+      "type": "text",
+      "from": "other",
+      "text": "Das praktische Projekt"
+    },
+    {
+      "type": "audio",
+      "from": "other",
+      "src": "hoerbuch/Hoerbuch_13_Praktisches_Projekt.webm"
+    }
   ],
   "interview": [
-    { "type": "text", "from": "me", "text": "Frage 1" },
-    { "type": "text", "from": "me", "text": "Frage 2" },
-    { "type": "text", "from": "me", "text": "Frage 3" },
-    { "type": "text", "from": "other", "text": "Hallo hier Anna" },
-    { "type": "audio", "from": "other", "src": "lofi-piano-loop.wav" },
-    { "type": "text", "from": "other", "text": "Alex" },
-    { "type": "audio", "from": "other", "src": "lofi-piano-loop.wav" }
+    {
+      "type": "text",
+      "from": "me",
+      "text": "Was braucht es für dich, damit sich eine Interaktion im digitalen Raum wirklich lebendig anfühlt?"
+    },
+    {
+      "type": "text",
+      "from": "me",
+      "text": "Welche Spuren hinterlässt eine digitale Begegnung (Chat; Videocall; Sprachnachricht etc.) in dir – und wie fühlt sich das für dich an?"
+    },
+    {
+      "type": "text",
+      "from": "me",
+      "text": "Erinnerst du dich an eine Situation, in der dich ein digitales Gespräch emotional berührt hat – und was hat diesen Moment besonders gemacht?"
+    },
+    {
+      "type": "text",
+      "from": "other",
+      "text": "Heyo, ich bin Dominik"
+    },
+    {
+      "type": "audio",
+      "from": "other",
+      "src": "interview/Interview_Dominik.webm"
+    },
+    {
+      "type": "text",
+      "from": "me",
+      "text": "Hi"
+    },
+    {
+      "type": "audio",
+      "from": "me",
+      "src": "interview/Interview_Lina.webm"
+    },
+    {
+      "type": "text",
+      "from": "other",
+      "text": "Hey, ich heiße Mariele, so wie Marie mit LE."
+    },
+    {
+      "type": "audio",
+      "from": "other",
+      "src": "interview/Interview_Mariele.webm"
+    },
+    {
+      "type": "text",
+      "from": "me",
+      "text": "Moin, Jörg Wolter Sube mein Name"
+    },
+    {
+      "type": "audio",
+      "from": "me",
+      "src": "interview/Interview_Joerg.webm"
+    },
+    {
+      "type": "text",
+      "from": "other",
+      "text": "Hallo, ich bin die Iris"
+    },
+    {
+      "type": "audio",
+      "from": "other",
+      "src": "interview/Interview_Iris.webm"
+    },
+    {
+      "type": "text",
+      "from": "me",
+      "text": "Moinsen, ich bin Alex"
+    },
+    {
+      "type": "audio",
+      "from": "me",
+      "src": "interview/Interview_Alex.webm"
+    },
+    {
+      "type": "text",
+      "from": "other",
+      "text": "Hallo, hier ist Bonnie :)"
+    },
+    {
+      "type": "audio",
+      "from": "other",
+      "src": "interview/Interview_Bonnie.webm"
+    },
+    {
+      "type": "text",
+      "from": "me",
+      "text": "Yooooo hier ist Jacky!"
+    },
+    {
+      "type": "audio",
+      "from": "me",
+      "src": "interview/Interview_Jacky.webm"
+    },
+    {
+      "type": "text",
+      "from": "other",
+      "text": "Hallo"
+    },
+    {
+      "type": "audio",
+      "from": "other",
+      "src": "interview/Interview_Phia.webm"
+    },
+    {
+      "type": "text",
+      "from": "me",
+      "text": "Huhu, it’s me, Nathalie"
+    },
+    {
+      "type": "audio",
+      "from": "me",
+      "src": "interview/Interview_Nathalie.webm"
+    },
+    {
+      "type": "text",
+      "from": "other",
+      "text": "Hi, ich bin Lorenzo"
+    },
+    {
+      "type": "audio",
+      "from": "other",
+      "src": "interview/Interview_Lorenzo.webm"
+    },
+    {
+      "type": "text",
+      "from": "me",
+      "text": "Hello, ich bin johanna"
+    },
+    {
+      "type": "audio",
+      "from": "me",
+      "src": "interview/Interview_Johanna.webm"
+    },
+    {
+      "type": "text",
+      "from": "other",
+      "text": "Hello, salut, Karola hier"
+    },
+    {
+      "type": "audio",
+      "from": "other",
+      "src": "interview/Interview_Karola.webm"
+    },
+    {
+      "type": "text",
+      "from": "me",
+      "text": "Hallo, ich bin die Jessy"
+    },
+    {
+      "type": "audio",
+      "from": "me",
+      "src": "interview/Interview_Jessy.webm"
+    },
+    {
+      "type": "text",
+      "from": "other",
+      "text": "Hi hier is Coco"
+    },
+    {
+      "type": "audio",
+      "from": "other",
+      "src": "interview/Interview_Coco.webm"
+    },
+    {
+      "type": "text",
+      "from": "me",
+      "text": "Hi, Ana hier"
+    },
+    {
+      "type": "audio",
+      "from": "me",
+      "src": "interview/Interview_Ana.webm"
+    },
+    {
+      "type": "text",
+      "from": "other",
+      "text": "Hey, ich bin nele :)"
+    },
+    {
+      "type": "audio",
+      "from": "other",
+      "src": "interview/Interview_Nele.webm"
+    },
+    {
+      "type": "text",
+      "from": "me",
+      "text": "Hey, ich bin Kathi"
+    },
+    {
+      "type": "audio",
+      "from": "me",
+      "src": "interview/Interview_Kathi.webm"
+    },
+    {
+      "type": "text",
+      "from": "other",
+      "text": "Hallo ich bin Lasse, Nicole, Paula, Barnd und Martha"
+    },
+    {
+      "type": "audio",
+      "from": "other",
+      "src": "interview/Interview_Lasse Barnd Nicole Paula Martha.webm"
+    },
+    {
+      "type": "text",
+      "from": "me",
+      "text": "Heeey ich bins"
+    },
+    {
+      "type": "audio",
+      "from": "me",
+      "src": "interview/Interview_Pia.webm"
+    },
+    {
+      "type": "text",
+      "from": "other",
+      "text": "Hi, ich bin Thomas"
+    },
+    {
+      "type": "audio",
+      "from": "other",
+      "src": "interview/Interview_Thomas.webm"
+    },
+    {
+      "type": "text",
+      "from": "me",
+      "text": "Hey ihr Mäuse ich bis Ceddy"
+    },
+    {
+      "type": "audio",
+      "from": "me",
+      "src": "interview/Interview_Ceddi.webm"
+    }
+  ],
+  "sammlung": [
+    {
+      "type": "text",
+      "from": "me",
+      "text": "Das sind alle Sprachnachrichten, die mir zugeschickt wurden und noch ein paar mehr. Viel Spaß beim reinhören!"
+    },
+    {
+      "type": "audio",
+      "from": "other",
+      "src": "sammlung/Voice_Mails.webm"
+    }
+  ],
+  "arbeiten": [
+    {
+      "type": "text",
+      "from": "me",
+      "text": "Digital Speechzies"
+    },
+    {
+      "type": "audio",
+      "from": "me",
+      "src": "arbeiten/Arbeiten_15_Digital_Speechzies_Ausstellung.webm"
+    },
+    {
+      "type": "text",
+      "from": "other",
+      "text": "Everything Is Everything"
+    },
+    {
+      "type": "audio",
+      "from": "other",
+      "src": "arbeiten/Arbeiten_17_Kreuz.webm"
+    },
+    {
+      "type": "text",
+      "from": "me",
+      "text": "Ohne Titel"
+    },
+    {
+      "type": "audio",
+      "from": "me",
+      "src": "arbeiten/Arbeiten_16_Smartphones.webm"
+    },
+    {
+      "type": "text",
+      "from": "other",
+      "text": "Ohne Titel"
+    },
+    {
+      "type": "audio",
+      "from": "other",
+      "src": "arbeiten/Arbeiten_14_Blase.webm"
+    }
   ]
 }
