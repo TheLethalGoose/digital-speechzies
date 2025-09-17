@@ -202,11 +202,13 @@ onBeforeUnmount(() => {
 .thumb::after {
   content: "";
   position: absolute;
-  top: -4px;
-  left: -4px;
-  right: -4px;
-  bottom: -4px;
+  top: -12px;
+  left: -12px;
+  right: -12px;
+  bottom: -12px;
   border-radius: 50%;
+  /* background: rgba(255, 0, 0, 0.2); */
+  pointer-events: auto;
 }
 
 .track,
